@@ -1,0 +1,210 @@
+[
+  {
+    "name": "India",
+    "states": [
+      {
+        "name": "Maharashtra",
+        "cities": [
+          "Mumbai",
+          "Pune",
+          "Nagpur"
+        ]
+      },
+      {
+        "name": "Gujarat",
+        "cities": [
+          "Ahmedabad",
+          "Surat",
+          "Rajkot"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "USA",
+    "states": [
+      {
+        "name": "California",
+        "cities": [
+          "Los Angeles",
+          "San Diego",
+          "San Jose"
+        ]
+      },
+      {
+        "name": "Texas",
+        "cities": [
+          "Houston",
+          "Dallas",
+          "Austin"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Canada",
+    "states": [
+      {
+        "name": "Ontario",
+        "cities": [
+          "Toronto",
+          "Ottawa",
+          "Hamilton"
+        ]
+      },
+      {
+        "name": "Quebec",
+        "cities": [
+          "Montreal",
+          "Quebec City",
+          "Laval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Australia",
+    "states": [
+      {
+        "name": "New South Wales",
+        "cities": [
+          "Sydney",
+          "Newcastle",
+          "Wollongong"
+        ]
+      },
+      {
+        "name": "Victoria",
+        "cities": [
+          "Melbourne",
+          "Geelong",
+          "Ballarat"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Germany",
+    "states": [
+      {
+        "name": "Bavaria",
+        "cities": [
+          "Munich",
+          "Nuremberg",
+          "Augsburg"
+        ]
+      },
+      {
+        "name": "Berlin",
+        "cities": [
+          "Berlin"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "United Kingdom",
+    "states": [
+      {
+        "name": "England",
+        "cities": [
+          "London",
+          "Manchester",
+          "Birmingham"
+        ]
+      },
+      {
+        "name": "Scotland",
+        "cities": [
+          "Edinburgh",
+          "Glasgow",
+          "Aberdeen"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Brazil",
+    "states": [
+      {
+        "name": "S\u00e3o Paulo",
+        "cities": [
+          "S\u00e3o Paulo",
+          "Campinas",
+          "Santos"
+        ]
+      },
+      {
+        "name": "Rio de Janeiro",
+        "cities": [
+          "Rio de Janeiro",
+          "Niter\u00f3i",
+          "Nova Igua\u00e7u"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "France",
+    "states": [
+      {
+        "name": "\u00cele-de-France",
+        "cities": [
+          "Paris",
+          "Versailles",
+          "Boulogne-Billancourt"
+        ]
+      },
+      {
+        "name": "Provence-Alpes-C\u00f4te d'Azur",
+        "cities": [
+          "Marseille",
+          "Nice",
+          "Toulon"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Japan",
+    "states": [
+      {
+        "name": "Tokyo",
+        "cities": [
+          "Tokyo",
+          "Hachioji",
+          "Machida"
+        ]
+      },
+      {
+        "name": "Osaka",
+        "cities": [
+          "Osaka",
+          "Sakai",
+          "Higashiosaka"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "South Africa",
+    "states": [
+      {
+        "name": "Gauteng",
+        "cities": [
+          "Johannesburg",
+          "Pretoria",
+          "Soweto"
+        ]
+      },
+      {
+        "name": "Western Cape",
+        "cities": [
+          "Cape Town",
+          "Stellenbosch",
+          "George"
+        ]
+      }
+    ]
+  }
+]
