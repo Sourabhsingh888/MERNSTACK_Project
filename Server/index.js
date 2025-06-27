@@ -5,8 +5,8 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const { dbConnect } = require("./config/db");
 const userformRoutes = require("./routes/UserformRoutes");
-const locationRoutes = require("./routes/locationRoutes");
 
+const locationRoutes = require('./routes/locationRoutes');
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
