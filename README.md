@@ -88,5 +88,9 @@ Includes endpoints:
 
 /api/location/cities/:stateId — Fetch cities for state
 
+## 🔗 Live Demo
+
+- Frontend: [Live on Vercel](https://mernstack-project-nu.vercel.app/)
+- Backend: [Live on Render](https://mernstack-project-64qn.onrender.com)
 
 
