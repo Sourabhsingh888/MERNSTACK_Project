@@ -30,6 +30,7 @@ const UserProfileForm = () => {
   const [usernameAvailable, setUsernameAvailable] = useState(null);
   const [passwordStrength, setPasswordStrength] = useState("");
   const [status, setStatus] = useState("");
+  const [usernameError, setUsernameError] = useState("");
 
   useEffect(() => {
     axios
@@ -59,6 +60,13 @@ const UserProfileForm = () => {
     }
   }, [formData.state]);
 
+  const validateUsername = (value) => {
+    if (!value) return "Username is required";
+    if (value.length < 4 || value.length > 20) return "Must be 4–20 characters";
+    if (/\s/.test(value)) return "No spaces allowed";
+    return "";
+  };
+
   const handleInputChange = (e) => {
     const { name, value, type, checked, files } = e.target;
     const updatedValue =
@@ -76,14 +84,21 @@ const UserProfileForm = () => {
       setFormData({ ...formData, [name]: updatedValue });
     }
 
-    if (name === "username" && value.trim().length > 3) {
-      axios
-        .get(
-          `${BASE_SERVER_URL_BACKEND}/api/users/check-username?username=${value}`
-        )
-        .then((res) => {
-          setUsernameAvailable(res.data.available);
-        });
+    if (name === "username") {
+      const error = validateUsername(value);
+      setUsernameError(error);
+
+      if (!error) {
+        axios
+          .get(
+            `${BASE_SERVER_URL_BACKEND}/api/users/check-username?username=${value}`
+          )
+          .then((res) => {
+            setUsernameAvailable(res.data.available);
+          });
+      } else {
+        setUsernameAvailable(null);
+      }
     }
 
     if (name === "password") {
@@ -167,11 +182,17 @@ const UserProfileForm = () => {
               onChange={handleInputChange}
               required
             />
-            {usernameAvailable === false && (
-              <div className="text-danger">Username not available</div>
+            {/* Show username format validation error */}
+            {usernameError && (
+              <div className="text-danger mt-1">{usernameError}</div>
             )}
-            {usernameAvailable === true && (
-              <div className="text-success">Username available</div>
+
+            {/* Show availability message only if no validation error */}
+            {!usernameError && usernameAvailable === false && (
+              <div className="text-danger mt-1">Username not available</div>
+            )}
+            {!usernameError && usernameAvailable === true && (
+              <div className="text-success mt-1">Username available</div>
             )}
           </div>
 
