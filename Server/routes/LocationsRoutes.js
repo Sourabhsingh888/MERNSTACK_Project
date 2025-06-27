@@ -4,7 +4,7 @@ const {
   getCountries,
   getStatesByCountry,
   getCitiesByState,
-} = require("../controller/locationController");
+} = require("../controller/LocationController");
 
 // check countries / states/ cities
 router.get("/countries", getCountries);
