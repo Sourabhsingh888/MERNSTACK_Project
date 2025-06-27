@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { BASE_SERVER_URL_BACKEND } from "../utils/Api";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const UpdatePasswordForm = () => {
@@ -32,7 +33,7 @@ const UpdatePasswordForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/users/update-password",
+        `${BASE_SERVER_URL_BACKEND}/api/users/update-password`,
         form
       );
       if (response.data.success) {

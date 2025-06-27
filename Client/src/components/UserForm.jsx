@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { BASE_SERVER_URL_BACKEND } from "../utils/Api";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const UserProfileForm = () => {
@@ -32,14 +33,16 @@ const UserProfileForm = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/location/countries")
+      .get(`${BASE_SERVER_URL_BACKEND}/api/location/countries`)
       .then((res) => setCountries(res.data));
   }, []);
 
   useEffect(() => {
     if (formData.country) {
       axios
-        .get(`http://localhost:8080/api/location/states/${formData.country}`)
+        .get(
+          `${BASE_SERVER_URL_BACKEND}/api/location/states/${formData.country}`
+        )
         .then((res) => setStates(res.data));
       setFormData({ ...formData, state: "", city: "" });
     }
@@ -48,7 +51,9 @@ const UserProfileForm = () => {
   useEffect(() => {
     if (formData.state) {
       axios
-        .get(`http://localhost:8080/api/location/cities/${formData.state}`)
+        .get(
+          `${BASE_SERVER_URL_BACKEND}/api/location/cities/${formData.state}`
+        )
         .then((res) => setCities(res.data));
       setFormData({ ...formData, city: "" });
     }
@@ -73,7 +78,9 @@ const UserProfileForm = () => {
 
     if (name === "username" && value.trim().length > 3) {
       axios
-        .get(`http://localhost:8080/api/users/check-username?username=${value}`)
+        .get(
+          `${BASE_SERVER_URL_BACKEND}/api/users/check-username?username=${value}`
+        )
         .then((res) => {
           setUsernameAvailable(res.data.available);
         });
@@ -120,7 +127,10 @@ const UserProfileForm = () => {
     });
 
     try {
-      await axios.post("http://localhost:8080/api/users/submit-user", data);
+      await axios.post(
+        `${BASE_SERVER_URL_BACKEND}/api/users/submit-user`,
+        data
+      );
         setStatus("Form submitted successfully!");
         resetForm();
       setShowPreview(false);
