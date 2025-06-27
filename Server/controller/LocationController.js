@@ -7,6 +7,7 @@ exports.getCountries = async (req, res) => {
     const countries = await Country.find({});
     res.json(countries);
   } catch (err) {
+    console.error("Error fetching countries:", err);
     res.status(500).json({ error: "Error fetching countries" });
   }
 };
@@ -16,6 +17,7 @@ exports.getStatesByCountry = async (req, res) => {
     const states = await State.find({ countryId: req.params.countryId });
     res.json(states);
   } catch (err) {
+    console.error("Error fetching states:", err);
     res.status(500).json({ error: "Error fetching states" });
   }
 };
@@ -25,6 +27,7 @@ exports.getCitiesByState = async (req, res) => {
     const cities = await City.find({ stateId: req.params.stateId });
     res.json(cities);
   } catch (err) {
+    console.error("Error fetching cities:", err);
     res.status(500).json({ error: "Error fetching cities" });
   }
 };
